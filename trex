@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+"""trex: filters stdin with regex, prints all matched groups"""
+
+# I can never recall the syntax for sed/awk and I am too lazy to use man everytime I need it
+# so I created this simple script that does exactly what I want and expect
+
+import re
+import sys
+import fileinput
+
+__author__ 		= "Thomas Richner"
+__copyright__ 	= "Copyright 2015, Thomas Richner"
+__license__ 	= "MIT"
+__email__ 		= "trex@trichner.ch"
+
+if len(sys.argv) < 2 or sys.argv[1] == '-h' or sys.argv[1] == '--help':
+	print("Usage: trex <regex>      filters stdin with regex, prints all matched groups")
+	sys.exit(0)
+
+for line in fileinput.input('-'):
+	m = re.search(str(sys.argv[1]),line)
+	if m:
+		print(' '.join(map(str,m.groups())))
