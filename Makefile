@@ -1,4 +1,3 @@
-
 INSTALLDIR=/usr/local/bin
 
 all:
