@@ -11,7 +11,7 @@ BIN = asciitable
 all: $(BIN)
 
 install:
-	install -o root -g root -m 0755 asciitable $(INSTALLDIR)
+	install -o root -g root -m 0755 $(BIN) $(INSTALLDIR)
 
 %.o : %.c
 	$(CXX) $(CXXFLAGS) -c $<
