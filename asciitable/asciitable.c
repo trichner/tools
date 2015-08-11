@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main(){
-  const char A[]="*        THE ASCII TABLE BY JOSEF ZIEGLER         *";
+  const char A[]="*              THE ASCII TABLE BY JOSEF ZIEGLER              *";
   int i = -1, j = 0;
   while(j < 3) {
     while(++i < sizeof(A)-1) { // because of the '\0'
@@ -15,7 +15,7 @@ int main(){
     i = -1;
   }
   for(i = 33; i < 127; i++){
-    printf("%.3d ", i);
+    printf("%.3d  ", i);
     putc(i, stdout);
     printf("  ");
     if (i % 8==0)
